@@ -1,10 +1,11 @@
-import os
-import time
-import pygame
-import platform
 from pathlib import Path
+import platform
+import pygame
+import time
+import os
 
-#Define constants for Morse signs and Morse code dictionary
+
+# Define constants for Morse signs and Morse code dictionary
 SHORT_SIGN = '•'
 LONG_SIGN = '-'
 SPACE_SIGN = '╱'
@@ -27,10 +28,11 @@ def morse_converter():
     os.system('cls' if platform.system() == 'Windows' else 'clear')
     pygame.mixer.init()
 
-    short_beep = pygame.mixer.Sound(Path("./short_beep.mp3"))
-    long_beep = pygame.mixer.Sound(Path("./long_beep.mp3"))
+    short_beep = pygame.mixer.Sound(Path("assets/fx/short_beep.mp3"))
+    long_beep = pygame.mixer.Sound(Path("assets/fx/long_beep.mp3"))
 
     while True:
+
         original_text = input('Enter text [a-z0-9]:\n> ')
         converted_text = text_to_morse(original_text)
 
